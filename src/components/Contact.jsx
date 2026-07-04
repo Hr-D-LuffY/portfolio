@@ -22,39 +22,39 @@ function FacebookIcon({ size = 28 }) {
 	);
 }
 
-const GITHUB = import.meta.env.VITE_GITHUB;
-const LINKEDIN = import.meta.env.VITE_LINKEDIN;
-const FACEBOOK = import.meta.env.VITE_FACEBOOK;
-const EMAIL = import.meta.env.VITE_EMAIL;
+const GITHUB = "https://github.com/Hr-D-LuffY";
+const LINKEDIN = "https://www.linkedin.com/in/md-habib-ur-rahman/";
+const FACEBOOK = "https://www.facebook.com/habib420.hr ";
+const EMAIL = "hrsiam420@gmail.com";
 const PHONE = import.meta.env.VITE_PHONE;
 const ADDRESS = import.meta.env.VITE_ADDRESS;
 
 export default function Contact() {
 	return (
-		<section id="contact" className="py-section-gap relative">
-			<div className="container max-w-container-max mx-auto px-gutter relative z-10 animate-reveal stagger-1">
-				<div className="glass-card p-16 md:p-24 rounded-[64px] text-center max-w-5xl mx-auto border border-primary/20 shadow-2xl relative overflow-hidden bg-white/5 backdrop-blur-xl border-white/10">
-					<div className="absolute -top-24 -right-24 w-80 h-80 bg-primary/30 rounded-full blur-[100px]" />
-					<div className="absolute -bottom-24 -left-24 w-80 h-80 bg-secondary/30 rounded-full blur-[100px]" />
+		<section id="contact" className="py-16 sm:py-24 md:py-section-gap relative">
+			<div className="container max-w-container-max mx-auto px-5 sm:px-gutter relative z-10 animate-reveal stagger-1">
+				<div className="glass-card p-6 xs:p-8 sm:p-16 md:p-24 rounded-[32px] xs:rounded-[40px] sm:rounded-[64px] text-center max-w-5xl mx-auto border border-primary/20 shadow-2xl relative overflow-hidden bg-white/5 backdrop-blur-xl border-white/10">
+					<div className="absolute -top-16 -right-16 sm:-top-24 sm:-right-24 w-56 h-56 sm:w-80 sm:h-80 bg-primary/30 rounded-full blur-[60px] sm:blur-[100px]" />
+					<div className="absolute -bottom-16 -left-16 sm:-bottom-24 sm:-left-24 w-56 h-56 sm:w-80 sm:h-80 bg-secondary/30 rounded-full blur-[60px] sm:blur-[100px]" />
 
-					<h2 className="font-display text-headline-lg md:text-display mb-8 tracking-tight relative z-10">
+					<h2 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-headline-lg lg:text-display mb-4 xs:mb-6 sm:mb-8 tracking-tight relative z-10">
 						Let's <span className="text-primary italic">Collaborate</span>
 					</h2>
-					<p className="font-body-lg text-body-lg text-on-surface-variant mb-16 max-w-2xl mx-auto leading-relaxed relative z-10">
+					<p className="font-body-lg text-sm sm:text-base md:text-body-lg text-on-surface-variant mb-10 sm:mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed relative z-10">
 						Have an ambitious project in mind? Let's build something
 						extraordinary together. I'm always open to discussing new
 						opportunities.
 					</p>
 
-					<div className="grid md:grid-cols-3 gap-8 mb-16 relative z-10">
+					<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 xs:gap-5 sm:gap-8 mb-10 sm:mb-12 md:mb-16 relative z-10">
 						<a
 							href={`mailto:${EMAIL}`}
-							className="p-10 rounded-[32px] bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/5 backdrop-blur-xl transition-all group relative overflow-hidden"
+							className="p-6 xs:p-8 sm:p-10 rounded-2xl sm:rounded-[32px] bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/5 backdrop-blur-xl transition-all group relative overflow-hidden"
 						>
-							<span className="material-symbols-outlined text-primary text-4xl mb-6 block transition-transform group-hover:scale-110 group-hover:-rotate-12">
+							<span className="material-symbols-outlined text-primary text-3xl sm:text-4xl mb-4 sm:mb-6 block transition-transform group-hover:scale-110 group-hover:-rotate-12">
 								mail
 							</span>
-							<p className="font-label-md text-label-md font-bold uppercase tracking-[0.2em] mb-2">
+							<p className="font-label-md text-xs sm:text-label-md font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-2">
 								Email
 							</p>
 							<p className="font-caption text-caption text-on-surface-variant truncate opacity-60">
@@ -62,73 +62,73 @@ export default function Contact() {
 							</p>
 						</a>
 
-						<div className="p-10 rounded-[32px] bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/5 backdrop-blur-xl transition-all group relative overflow-hidden">
-							<span className="material-symbols-outlined text-primary text-4xl mb-6 block transition-transform group-hover:scale-110 group-hover:rotate-12">
+						<div className="p-6 xs:p-8 sm:p-10 rounded-2xl sm:rounded-[32px] bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/5 backdrop-blur-xl transition-all group relative overflow-hidden">
+							<span className="material-symbols-outlined text-primary text-3xl sm:text-4xl mb-4 sm:mb-6 block transition-transform group-hover:scale-110 group-hover:rotate-12">
 								location_on
 							</span>
-							<p className="font-label-md text-label-md font-bold uppercase tracking-[0.2em] mb-2">
+							<p className="font-label-md text-xs sm:text-label-md font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-2">
 								Location
 							</p>
 							<p className="font-caption text-caption text-on-surface-variant truncate opacity-60">
-								{ADDRESS}
+								Mirpur, Dhaka, Bangladesh
 							</p>
 						</div>
 
 						<a
-							href={`tel:${PHONE}`}
-							className="p-10 rounded-[32px] bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/5 backdrop-blur-xl transition-all group relative overflow-hidden"
+							href={`tel:+880 1533 961467`}
+							className="p-6 xs:p-8 sm:p-10 rounded-2xl sm:rounded-[32px] bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/5 backdrop-blur-xl transition-all group relative overflow-hidden"
 						>
-							<span className="material-symbols-outlined text-primary text-4xl mb-6 block transition-transform group-hover:scale-110 group-hover:rotate-12">
+							<span className="material-symbols-outlined text-primary text-3xl sm:text-4xl mb-4 sm:mb-6 block transition-transform group-hover:scale-110 group-hover:rotate-12">
 								phone
 							</span>
-							<p className="font-label-md text-label-md font-bold uppercase tracking-[0.2em] mb-2">
+							<p className="font-label-md text-xs sm:text-label-md font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-2">
 								Phone
 							</p>
 							<p className="font-caption text-caption text-on-surface-variant truncate opacity-60">
-								{PHONE}
+								+880 1533 961467
 							</p>
 						</a>
 					</div>
 
-					<div className="mb-16 relative z-10 p-10 rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-xl">
-						<h3 className="font-display text-2xl mb-8 tracking-tight">
+					<div className="mb-10 sm:mb-12 md:mb-16 relative z-10 p-6 xs:p-8 sm:p-10 rounded-2xl sm:rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-xl">
+						<h3 className="font-display text-lg xs:text-xl sm:text-2xl mb-5 sm:mb-8 tracking-tight">
 							Connect with me
 						</h3>
-						<div className="flex justify-center gap-8">
+						<div className="flex justify-center gap-4 xs:gap-6 sm:gap-8">
 							<a
 								href={GITHUB}
 								target="_blank"
 								rel="noreferrer"
-								className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 transition-all hover:border-primary/50 hover:bg-primary/10 hover:scale-110"
+								className="w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 transition-all hover:border-primary/50 hover:bg-primary/10 hover:scale-110"
 							>
-								<GithubIcon size={28} />
+								<GithubIcon size={22} />
 							</a>
 
 							<a
 								href={LINKEDIN}
 								target="_blank"
 								rel="noreferrer"
-								className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 transition-all hover:border-primary/50 hover:bg-primary/10 hover:scale-110"
+								className="w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 transition-all hover:border-primary/50 hover:bg-primary/10 hover:scale-110"
 							>
-								<LinkedinIcon size={28} />
+								<LinkedinIcon size={22} />
 							</a>
 
 							<a
 								href={FACEBOOK}
 								target="_blank"
 								rel="noreferrer"
-								className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 transition-all hover:border-primary/50 hover:bg-primary/10 hover:scale-110"
+								className="w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 transition-all hover:border-primary/50 hover:bg-primary/10 hover:scale-110"
 							>
-								<FacebookIcon size={28} />
+								<FacebookIcon size={22} />
 							</a>
 						</div>
 					</div>
 
 					<a
 						href={`mailto:${EMAIL}`}
-						className="relative z-10 inline-flex items-center justify-center gap-4 px-16 py-6 rounded-full font-display text-2xl font-bold text-on-surface bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl transition-all duration-500 transform hover:scale-105 hover:bg-white/15 hover:border-primary/40 active:scale-95"
+						className="relative z-10 inline-flex items-center justify-center gap-2.5 xs:gap-3 sm:gap-4 px-6 xs:px-10 sm:px-16 py-4 xs:py-5 sm:py-6 rounded-full font-display text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-on-surface bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl transition-all duration-500 transform hover:scale-105 hover:bg-white/15 hover:border-primary/40 active:scale-95 w-full xs:w-auto"
 					>
-						<span className="material-symbols-outlined text-3xl text-primary">
+						<span className="material-symbols-outlined text-xl xs:text-2xl sm:text-3xl text-primary">
 							mail
 						</span>
 						<span>Send Me an Email</span>

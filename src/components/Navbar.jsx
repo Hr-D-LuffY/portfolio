@@ -57,12 +57,12 @@ export default function Navbar() {
 
 	return (
 		<nav className="fixed top-0 w-full z-50 bg-background/40 backdrop-blur-2xl border-b border-white/10 shadow-sm">
-			<div className="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
-				<div className="font-display text-headline-md font-extrabold tracking-tight text-on-surface">
+			<div className="flex justify-between items-center h-16 xs:h-18 sm:h-20 px-5 sm:px-gutter max-w-container-max mx-auto">
+				<div className="font-display text-base xs:text-lg sm:text-xl md:text-headline-md font-extrabold tracking-tight text-on-surface truncate max-w-[65%] sm:max-w-none">
 					Md. Habibur Rahman
 				</div>
 
-				<div className="hidden md:flex gap-10 items-center">
+				<div className="hidden md:flex gap-6 lg:gap-10 items-center">
 					{NAV_LINKS.map(({ id, label }) => {
 						const isActive = activeSection === id;
 						return (
@@ -70,7 +70,7 @@ export default function Navbar() {
 								key={id}
 								href={`#${id}`}
 								onClick={(e) => handleNavClick(e, id)}
-								className={`font-label-md text-label-md uppercase transition-all duration-300 pb-1 ${
+								className={`font-label-md text-xs lg:text-label-md uppercase transition-all duration-300 pb-1 ${
 									isActive ?
 										"text-primary font-bold border-b-2 border-primary"
 									:	"text-on-surface-variant hover:text-on-surface"
@@ -83,14 +83,14 @@ export default function Navbar() {
 					<a
 						href="/Md_Habibur_Rahman_Resume.pdf"
 						download="Md_Habibur_Rahman_Resume.pdf"
-						className="bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md font-bold neon-glow-primary transition-all duration-300 transform hover:-translate-y-1 inline-block"
+						className="bg-primary text-on-primary px-6 lg:px-10 py-3 lg:py-5 rounded-full font-label-md text-xs lg:text-label-md font-bold neon-glow-primary transition-all duration-300 transform hover:-translate-y-1 inline-block whitespace-nowrap"
 					>
 						Download Resume
 					</a>
 				</div>
 
 				<button
-					className="md:hidden text-on-surface material-symbols-outlined text-3xl"
+					className="md:hidden text-on-surface material-symbols-outlined text-2xl xs:text-3xl shrink-0"
 					onClick={() => setMenuOpen((prev) => !prev)}
 					aria-label="Toggle menu"
 				>
@@ -99,13 +99,13 @@ export default function Navbar() {
 			</div>
 
 			{menuOpen && (
-				<div className="md:hidden bg-background/95 backdrop-blur-2xl border-t border-white/10 px-gutter py-8 flex flex-col gap-6">
+				<div className="md:hidden bg-background/95 backdrop-blur-2xl border-t border-white/10 px-5 sm:px-gutter py-6 xs:py-8 flex flex-col gap-5 xs:gap-6">
 					{NAV_LINKS.map(({ id, label }) => (
 						<a
 							key={id}
 							href={`#${id}`}
 							onClick={(e) => handleNavClick(e, id)}
-							className={`font-label-md text-label-md uppercase ${
+							className={`font-label-md text-sm xs:text-label-md uppercase ${
 								activeSection === id ?
 									"text-primary font-bold"
 								:	"text-on-surface-variant"
@@ -114,9 +114,13 @@ export default function Navbar() {
 							{label}
 						</a>
 					))}
-					<button className="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md font-bold neon-glow-primary transition-all duration-300">
+					<a
+						href="/Md_Habibur_Rahman_Resume.pdf"
+						download="Md_Habibur_Rahman_Resume.pdf"
+						className="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-sm xs:text-label-md font-bold neon-glow-primary transition-all duration-300 text-center"
+					>
 						Download Resume
-					</button>
+					</a>
 				</div>
 			)}
 		</nav>

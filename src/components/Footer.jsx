@@ -40,32 +40,32 @@ function MailIcon({ size = 28 }) {
 	);
 }
 
-const GITHUB = import.meta.env.VITE_GITHUB;
-const LINKEDIN = import.meta.env.VITE_LINKEDIN;
-const FACEBOOK = import.meta.env.VITE_FACEBOOK;
-const EMAIL = import.meta.env.VITE_EMAIL;
+const GITHUB = "https://github.com/Hr-D-LuffY";
+const LINKEDIN = "https://www.linkedin.com/in/md-habib-ur-rahman/";
+const FACEBOOK = "https://www.facebook.com/habib420.hr ";
+const EMAIL = "hrsiam420@gmail.com";
 
 export default function Footer() {
 	return (
-		<footer className="w-full py-16 border-t border-white/5 bg-background relative z-10">
-			<div className="max-w-container-max mx-auto px-gutter">
-				<div className="flex flex-col md:flex-row justify-between items-center gap-12 pb-12 border-b border-white/5">
-					<div className="font-display text-3xl font-black tracking-tighter text-on-surface uppercase">
+		<footer className="w-full py-10 sm:py-12 md:py-16 border-t border-white/5 bg-background relative z-10">
+			<div className="max-w-container-max mx-auto px-5 sm:px-gutter">
+				<div className="flex flex-col md:flex-row justify-between items-center gap-8 xs:gap-10 md:gap-12 pb-8 xs:pb-10 md:pb-12 border-b border-white/5">
+					<div className="font-display text-xl xs:text-2xl sm:text-3xl font-black tracking-tighter text-on-surface uppercase text-center md:text-left">
 						Md. Habibur Rahman
 					</div>
 
-					<div className="flex flex-col items-center md:items-start gap-4">
-						<span className="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest opacity-60">
+					<div className="flex flex-col items-center md:items-start gap-3 xs:gap-4">
+						<span className="font-label-md text-[11px] xs:text-xs sm:text-label-md text-on-surface-variant uppercase tracking-widest opacity-60">
 							Connect with me
 						</span>
-						<div className="flex gap-8">
+						<div className="flex gap-5 xs:gap-6 sm:gap-8">
 							<a
 								href={GITHUB}
 								target="_blank"
 								rel="noreferrer"
 								className="text-on-surface-variant hover:text-primary transition-all duration-300 transform hover:scale-125"
 							>
-								<GithubIcon size={28} />
+								<GithubIcon size={22} />
 							</a>
 
 							<a
@@ -74,7 +74,7 @@ export default function Footer() {
 								rel="noreferrer"
 								className="text-on-surface-variant hover:text-primary transition-all duration-300 transform hover:scale-125"
 							>
-								<LinkedinIcon size={28} />
+								<LinkedinIcon size={22} />
 							</a>
 
 							<a
@@ -83,7 +83,7 @@ export default function Footer() {
 								rel="noreferrer"
 								className="text-on-surface-variant hover:text-primary transition-all duration-300 transform hover:scale-125"
 							>
-								<FacebookIcon size={28} />
+								<FacebookIcon size={22} />
 							</a>
 
 							<a
@@ -92,14 +92,14 @@ export default function Footer() {
 								rel="noreferrer"
 								className="text-on-surface-variant hover:text-primary transition-all duration-300 transform hover:scale-125"
 							>
-								<MailIcon size={28} />
+								<MailIcon size={22} />
 							</a>
 						</div>
 					</div>
 				</div>
 
-				<div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-					<p className="font-caption text-caption text-on-surface-variant uppercase tracking-[0.2em] opacity-40">
+				<div className="pt-6 xs:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+					<p className="font-caption text-[10px] xs:text-caption text-on-surface-variant uppercase tracking-[0.15em] xs:tracking-[0.2em] opacity-40 text-center">
 						© {new Date().getFullYear()} Md. Habibur Rahman. Crafted with
 						Precision.
 					</p>

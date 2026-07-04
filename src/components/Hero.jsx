@@ -1,4 +1,5 @@
 import mainpic from "../images/pic1.webp";
+
 function GithubIcon({ size = 28 }) {
 	return (
 		<svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -23,50 +24,52 @@ function FacebookIcon({ size = 28 }) {
 	);
 }
 
-const GITHUB = import.meta.env.VITE_GITHUB;
-const LINKEDIN = import.meta.env.VITE_LINKEDIN;
-const FACEBOOK = import.meta.env.VITE_FACEBOOK;
+const GITHUB = "https://github.com/Hr-D-LuffY";
+const LINKEDIN = "https://www.linkedin.com/in/md-habib-ur-rahman/";
+const FACEBOOK = "https://www.facebook.com/habib420.hr ";
 
 export default function Hero() {
 	return (
 		<section
 			id="home"
-			className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden"
+			className="relative min-h-screen flex items-center pt-28 pb-16 md:pt-24 md:pb-12 overflow-hidden"
 		>
-			<div className="container max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-16 items-center">
-				<div className="space-y-10 animate-reveal stagger-1">
-					<div className="inline-block px-5 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-md text-label-md uppercase tracking-[0.2em]">
+			<div className="container max-w-container-max mx-auto px-5 sm:px-gutter grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+				<div className="space-y-6 sm:space-y-8 md:space-y-10 animate-reveal stagger-1 text-center lg:text-left order-2 lg:order-1">
+					<div className="inline-block px-4 sm:px-5 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-md text-[11px] sm:text-label-md uppercase tracking-[0.15em] sm:tracking-[0.2em]">
 						Available for opportunities
 					</div>
 
-					<h1 className="font-display text-display leading-[1.1] tracking-tight">
-						<span className="block mb-4 text-glow">Md. Habibur Rahman</span>
-						<span className="block text-headline-lg md:text-display text-primary italic opacity-90">
+					<h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-display leading-[1.15] lg:leading-[1.1] tracking-tight">
+						<span className="block mb-2 sm:mb-4 text-glow">
+							Md. Habibur Rahman
+						</span>
+						<span className="block text-xl sm:text-2xl md:text-3xl lg:text-headline-lg lg:md:text-display text-primary italic opacity-90">
 							Backend &amp; Full Stack Developer
 						</span>
 					</h1>
 
-					<p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+					<p className="font-body-lg text-sm sm:text-base lg:text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0 leading-relaxed">
 						Architecting high-performance web applications with a focus on
 						technical precision and creative user experiences.
 					</p>
 
-					<div className="flex flex-wrap gap-6 items-center">
+					<div className="flex flex-col sm:flex-row flex-wrap gap-5 sm:gap-6 items-center justify-center lg:justify-start">
 						<a
 							href="/Md_Habibur_Rahman_Resume.pdf"
 							download="Md_Habibur_Rahman_Resume.pdf"
-							className="bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md font-bold neon-glow-primary transition-all duration-300 transform hover:-translate-y-1 inline-block"
+							className="w-full sm:w-auto text-center bg-primary text-on-primary px-8 sm:px-10 py-4 sm:py-5 rounded-full font-label-md text-label-md font-bold neon-glow-primary transition-all duration-300 transform hover:-translate-y-1 inline-block"
 						>
 							Download Resume
 						</a>
-						<div className="flex items-center gap-8 px-6 border-l border-white/10">
+						<div className="flex items-center gap-6 sm:gap-8 px-0 sm:px-6 sm:border-l border-white/10">
 							<a
 								href={GITHUB}
 								target="_blank"
 								rel="noreferrer"
 								className="text-on-surface-variant hover:text-primary transition-all duration-300 transform hover:scale-125"
 							>
-								<GithubIcon size={28} />
+								<GithubIcon size={26} />
 							</a>
 
 							<a
@@ -75,7 +78,7 @@ export default function Hero() {
 								rel="noreferrer"
 								className="text-on-surface-variant hover:text-primary transition-all duration-300 transform hover:scale-125"
 							>
-								<LinkedinIcon size={28} />
+								<LinkedinIcon size={26} />
 							</a>
 
 							<a
@@ -84,19 +87,19 @@ export default function Hero() {
 								rel="noreferrer"
 								className="text-on-surface-variant hover:text-primary transition-all duration-300 transform hover:scale-125"
 							>
-								<FacebookIcon size={28} />
+								<FacebookIcon size={26} />
 							</a>
 						</div>
 					</div>
 				</div>
 
-				<div className="flex justify-center md:justify-end animate-reveal stagger-2">
-					<div className="relative w-80 h-96 md:w-[500px] md:h-[600px]">
-						<div className="absolute inset-0 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
+				<div className="flex justify-center lg:justify-end animate-reveal stagger-2 order-1 lg:order-2">
+					<div className="relative w-56 h-64 xs:w-64 xs:h-72 sm:w-80 sm:h-96 md:w-96 md:h-[460px] lg:w-[500px] lg:h-[600px]">
+						<div className="absolute inset-0 bg-primary/20 rounded-full blur-[60px] sm:blur-[80px] lg:blur-[100px] animate-pulse" />
 
-						<div className="relative z-10 w-full h-full rounded-[40px] border border-white/10 overflow-hidden glass-card p-2 shadow-2xl">
+						<div className="relative z-10 w-full h-full rounded-[28px] sm:rounded-[36px] lg:rounded-[40px] border border-white/10 overflow-hidden glass-card p-1.5 sm:p-2 shadow-2xl">
 							<img
-								className="w-full h-full object-cover object-top rounded-[32px] transition-all duration-1000"
+								className="w-full h-full object-cover object-top rounded-[22px] sm:rounded-[30px] lg:rounded-[32px] transition-all duration-1000"
 								alt="Md. Habibur Rahman, backend and full stack developer"
 								src={mainpic}
 							/>

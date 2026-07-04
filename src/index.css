@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.indigo-gradient {
+  background: linear-gradient(90deg, #4f46e5, #c3c0ff);
+}
+
+.skill-bar-bg {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.skill-progress {
+  width: 0%;
+  transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-progress.animate {
+  width: var(--progress-width);
+}
+
+.neon-glow-primary {
+  box-shadow: 0 0 20px 0 rgba(195, 192, 255, 0.35);
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(195, 192, 255, 0.35);
+}
+
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora-circle {
+  will-change: transform;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stagger-1 {
+  animation-delay: 0.05s;
+}
+.stagger-2 {
+  animation-delay: 0.15s;
+}
+.stagger-3 {
+  animation-delay: 0.25s;
+}
+.stagger-4 {
+  animation-delay: 0.35s;
+}

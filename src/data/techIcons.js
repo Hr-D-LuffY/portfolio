@@ -1,0 +1,41 @@
+import {
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiC,
+  SiCplusplus,
+  SiExpress,
+  SiReact,
+  SiNextdotjs,
+  SiDjango,
+  SiNodedotjs,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiPrisma,
+  SiJsonwebtokens,
+  SiStripe,
+} from "react-icons/si";
+import { ShieldCheck } from "lucide-react";
+
+/** Name (as used in project.tech / skills data) → icon component. */
+export const TECH_ICON = {
+  Python: SiPython,
+  JavaScript: SiJavascript,
+  TypeScript: SiTypescript,
+  C: SiC,
+  "C++": SiCplusplus,
+  "Express.js": SiExpress,
+  Express: SiExpress,
+  React: SiReact,
+  "Next.js": SiNextdotjs,
+  Django: SiDjango,
+  "Node.js": SiNodedotjs,
+  PostgreSQL: SiPostgresql,
+  MySQL: SiMysql,
+  MongoDB: SiMongodb,
+  Prisma: SiPrisma,
+  JWT: SiJsonwebtokens,
+  RBAC: ShieldCheck,
+  Stripe: SiStripe,
+};

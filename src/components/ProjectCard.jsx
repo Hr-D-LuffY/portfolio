@@ -1,41 +1,73 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import StatusTag from "./ui/StatusTag";
+import TechBadge from "./ui/TechBadge";
 
-export default function ProjectCard({
-	slug,
-	title,
-	tag,
-	description,
-	image,
-	stagger,
-}) {
+export default function ProjectCard({ project, index = 0 }) {
 	return (
-		<div
-			className={`group glass-card rounded-2xl xs:rounded-[32px] sm:rounded-[40px] overflow-hidden animate-reveal ${stagger} bg-white/5 backdrop-blur-xl border-white/10`}
+		<motion.div
+			initial={{ opacity: 0, y: 20 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, amount: 0.2 }}
+			transition={{
+				duration: 0.5,
+				delay: index * 0.08,
+				ease: [0.22, 1, 0.36, 1],
+			}}
+			whileHover={{ y: -6 }}
+			className="group relative"
 		>
-			<div className="relative aspect-[16/10] overflow-hidden p-2 xs:p-2.5 sm:p-3 pb-0">
-				<img
-					className="w-full h-full object-cover rounded-xl xs:rounded-2xl sm:rounded-[32px] group-hover:scale-110 transition-transform duration-1000"
-					alt={description}
-					src={image}
-				/>
-				<div className="absolute top-4 right-4 xs:top-6 xs:right-6 sm:top-8 sm:right-8 bg-background/60 backdrop-blur-xl px-3 xs:px-4 py-1 xs:py-1.5 rounded-full border border-white/10 font-label-md text-[10px] xs:text-caption uppercase tracking-widest font-bold">
-					{tag}
+			<Link
+				to={`/projects/${project.slug}`}
+				className="block h-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition-colors duration-300 hover:border-[var(--accent)]/50 focus-visible:border-[var(--accent)]/50"
+			>
+				<div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--border)] bg-[var(--bg-elevated)]">
+					<img
+						src={`/images/projects/${project.image}.png`}
+						alt={`${project.name} interface preview`}
+						className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+						loading="lazy"
+					/>
+					<div className="absolute left-3 top-3">
+						<StatusTag
+							label={`status: ${project.status}`}
+							tone={project.status}
+							pulse={false}
+						/>
+					</div>
 				</div>
-			</div>
-			<div className="p-5 xs:p-7 sm:p-10 pt-4 xs:pt-6 sm:pt-8">
-				<h3 className="font-display text-lg xs:text-xl sm:text-2xl mb-2 xs:mb-3 sm:mb-4 tracking-tight">
-					{title}
-				</h3>
-				<p className="font-body-md text-sm sm:text-base text-on-surface-variant mb-5 xs:mb-6 sm:mb-8 leading-relaxed">
-					{description}
-				</p>
-				<Link
-					to={`/projects/${slug}`}
-					className="block text-center w-full py-3 xs:py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border border-primary/30 bg-primary/5 text-primary font-label-md text-[11px] xs:text-xs sm:text-label-md uppercase tracking-[0.15em] xs:tracking-[0.2em] font-bold hover:bg-primary hover:text-on-primary transition-all"
-				>
-					View Details
-				</Link>
-			</div>
-		</div>
+
+				<div className="p-6">
+					<div className="flex items-start justify-between gap-3">
+						<div>
+							<h3 className="font-display text-lg font-semibold text-[var(--text)]">
+								{project.name}
+							</h3>
+							<p className="mt-0.5 font-mono text-xs text-[var(--text-dim)]">
+								{project.tagline}
+							</p>
+						</div>
+						<ArrowUpRight
+							className="mt-1 h-4 w-4 shrink-0 text-[var(--text-dim)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--accent)]"
+							aria-hidden="true"
+						/>
+					</div>
+
+					<p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
+						{project.summary}
+					</p>
+
+					<div className="mt-5 flex flex-wrap gap-1.5">
+						{project.tech.slice(0, 4).map((t) => (
+							<TechBadge key={t} name={t} size="sm" />
+						))}
+						{project.tech.length > 4 && (
+							<TechBadge name={`+${project.tech.length - 4}`} size="sm" />
+						)}
+					</div>
+				</div>
+			</Link>
+		</motion.div>
 	);
 }

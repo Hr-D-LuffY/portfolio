@@ -1,90 +1,139 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-.material-symbols-outlined {
-  font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --color-teal: #2dd4bf;
+  --color-teal-dim: #1f9c8c;
+  --color-amber: #f5a623;
+
+  --breakpoint-xs: 480px;
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+/* ---------------------------------------------------------
+   Theme tokens. Dark is the default identity; `.light` on
+   <html> overrides the surface/text values, accents stay
+   the same voltage in both modes.
+--------------------------------------------------------- */
+:root {
+  --bg: #0a0e14;
+  --bg-elevated: #0d131c;
+  --surface: #121822;
+  --surface-hi: #1a2230;
+  --border: #202a38;
+  --text: #e7ecf2;
+  --text-muted: #7c8b9a;
+  --text-dim: #4c5867;
+  --accent: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --warm: #f5a623;
+  --warm-soft: rgba(245, 166, 35, 0.14);
+  --scrim: rgba(10, 14, 20, 0.72);
 }
 
-.indigo-gradient {
-  background: linear-gradient(90deg, #4f46e5, #c3c0ff);
+html.light {
+  --bg: #f3f5f7;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-hi: #eaeef1;
+  --border: #dde2e7;
+  --text: #10151d;
+  --text-muted: #5b6672;
+  --text-dim: #97a0a9;
+  --accent: #159c8a;
+  --accent-soft: rgba(21, 156, 138, 0.1);
+  --warm: #c97c0f;
+  --warm-soft: rgba(201, 124, 15, 0.12);
+  --scrim: rgba(243, 245, 247, 0.72);
 }
 
-.skill-bar-bg {
-  background: rgba(255, 255, 255, 0.06);
+* {
+  border-color: var(--border);
 }
 
-.skill-progress {
-  width: 0%;
-  transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
-.skill-progress.animate {
-  width: var(--progress-width);
+html.light {
+  color-scheme: light;
 }
 
-.neon-glow-primary {
-  box-shadow: 0 0 20px 0 rgba(195, 192, 255, 0.35);
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+/* Respect reduced-motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: #06120f;
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-hi);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
+}
+
+/* Keyboard focus visibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Reusable "grid + glow" ambient backdrop */
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--text) 5%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--text) 5%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 44px 44px;
 }
 
 .text-glow {
-  text-shadow: 0 0 40px rgba(195, 192, 255, 0.35);
+  text-shadow: 0 0 24px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
-.aurora-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.aurora-circle {
-  will-change: transform;
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-reveal {
-  animation: reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.stagger-1 {
-  animation-delay: 0.05s;
-}
-.stagger-2 {
-  animation-delay: 0.15s;
-}
-.stagger-3 {
-  animation-delay: 0.25s;
-}
-.stagger-4 {
-  animation-delay: 0.35s;
+.font-tabular {
+  font-variant-numeric: tabular-nums;
 }

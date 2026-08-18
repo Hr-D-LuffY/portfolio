@@ -2,7 +2,7 @@
 
 Personal portfolio site for **Md. Habibur Rahman**, a Full Stack Developer. Built as a single-page, terminal-themed site with animated sections, a live typewriter intro, and a working contact form.
 
-🔗 **Live site:** [add your deployed URL here]
+🔗 **Live site:** https://md-habibur-rahman-17.vercel.app/
 
 ---
 

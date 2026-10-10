@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import StatusTag from "./ui/StatusTag";
 import TechBadge from "./ui/TechBadge";
+import ProjectImage from "./ui/ProjectImage";
+import { TECH_ICON } from "../data/techIcons";
 
 export default function ProjectCard({ project, index = 0 }) {
 	return (
@@ -23,9 +25,8 @@ export default function ProjectCard({ project, index = 0 }) {
 				className="block h-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition-colors duration-300 hover:border-[var(--accent)]/50 focus-visible:border-[var(--accent)]/50"
 			>
 				<div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--border)] bg-[var(--bg-elevated)]">
-					<img
-						src={`/images/projects/${project.image}.png`}
-						alt={`${project.name} interface preview`}
+					<ProjectImage
+						project={project}
 						className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
 						loading="lazy"
 					/>
@@ -60,7 +61,7 @@ export default function ProjectCard({ project, index = 0 }) {
 
 					<div className="mt-5 flex flex-wrap gap-1.5">
 						{project.tech.slice(0, 4).map((t) => (
-							<TechBadge key={t} name={t} size="sm" />
+							<TechBadge key={t} name={t} Icon={TECH_ICON[t]} size="sm" />
 						))}
 						{project.tech.length > 4 && (
 							<TechBadge name={`+${project.tech.length - 4}`} size="sm" />

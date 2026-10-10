@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { FileText, Menu, X } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
@@ -70,6 +70,15 @@ export default function Navbar() {
 							{item.label}
 						</a>
 					))}
+					<a
+						href="/resume.pdf"
+						target="_blank"
+						rel="noreferrer"
+						className="inline-flex items-center gap-1.5 rounded-md border border-[var(--accent)]/40 px-3 py-1.5 font-mono text-sm text-[var(--accent)] transition-colors hover:bg-[var(--accent)]/10"
+					>
+						<FileText className="h-3.5 w-3.5" aria-hidden="true" />
+						Resume
+					</a>
 				</div>
 
 				<div className="hidden items-center gap-3 md:flex">
@@ -123,6 +132,15 @@ export default function Navbar() {
 									{item.label}
 								</a>
 							))}
+							<a
+								href="/resume.pdf"
+								target="_blank"
+								rel="noreferrer"
+								className="flex items-center gap-2 rounded-md px-3 py-2.5 font-mono text-sm text-[var(--accent)] transition-colors hover:bg-[var(--surface)]"
+							>
+								<FileText className="h-3.5 w-3.5" aria-hidden="true" />
+								Resume
+							</a>
 							<div className="mt-2 flex gap-3 px-3 pt-2">
 								{SOCIALS.map(({ label, href, Icon }) => (
 									<a

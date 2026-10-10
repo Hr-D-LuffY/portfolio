@@ -21,17 +21,17 @@ export default function About() {
 								APIs, auth flows, and data models running underneath. Most of my
 								hands-on experience is in the MERN stack and Next.js, building
 								applications that hold up under real usage: role-based access,
-								payment flows, and schedules that can't afford to get out of
-								sync.
+								payment flows (Stripe and bKash), and bookings and waitlists
+								that can't afford to get out of sync.
 							</p>
 							<p className="mt-5 text-lg leading-relaxed text-[var(--text-muted)]">
 								Right now I'm looking for a Junior Full Stack Developer role
 								where I can keep building complete products inside a team, learn
 								from people further along than me, and ship things that real
-								users depend on. Longer term, I want to specialize in
-								distributed system design across the stack — the FixItNow and
-								Disaster Relief projects below were both, in part, me practicing
-								exactly that.
+								users depend on. Longer term, I want to grow into DevOps and
+								infrastructure work — owning CareNest and FixItNow from the
+								database all the way to production deployment is where that
+								interest started.
 							</p>
 						</Reveal>
 

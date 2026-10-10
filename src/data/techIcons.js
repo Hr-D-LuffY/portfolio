@@ -15,8 +15,18 @@ import {
   SiPrisma,
   SiJsonwebtokens,
   SiStripe,
+  SiTailwindcss,
+  SiReactquery,
+  SiZod,
+  SiRedis,
+  SiGoogle,
+  SiCloudinary,
+  SiLeaflet,
+  SiVite,
+  SiSupabase,
+  SiSqlite,
 } from "react-icons/si";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Wallet } from "lucide-react";
 
 /** Name (as used in project.tech / skills data) → icon component. */
 export const TECH_ICON = {
@@ -38,4 +48,15 @@ export const TECH_ICON = {
   JWT: SiJsonwebtokens,
   RBAC: ShieldCheck,
   Stripe: SiStripe,
+  "Tailwind CSS": SiTailwindcss,
+  "TanStack Query": SiReactquery,
+  Zod: SiZod,
+  Redis: SiRedis,
+  "Google OAuth": SiGoogle,
+  Cloudinary: SiCloudinary,
+  "React-Leaflet": SiLeaflet,
+  Vite: SiVite,
+  Supabase: SiSupabase,
+  SQLite: SiSqlite,
+  bKash: Wallet,
 };

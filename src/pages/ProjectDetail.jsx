@@ -4,12 +4,15 @@ import {
 	ExternalLink,
 	CheckCircle2,
 	Lightbulb,
+	Info,
 	Wrench,
 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import Reveal from "../components/ui/Reveal";
 import StatusTag from "../components/ui/StatusTag";
 import TechBadge from "../components/ui/TechBadge";
+import ProjectImage from "../components/ui/ProjectImage";
+import { usePageMeta } from "../hooks/usePageMeta";
 import ProjectCard from "../components/ProjectCard";
 import GridBackdrop from "../components/ui/GridBackdrop";
 import { getAllProjects, getProjectBySlug } from "../data/projects";
@@ -18,6 +21,11 @@ import { TECH_ICON } from "../data/techIcons";
 export default function ProjectDetail() {
 	const { slug } = useParams();
 	const project = getProjectBySlug(slug);
+
+	usePageMeta({
+		title: project ? `${project.name} — ${project.tagline}` : undefined,
+		description: project?.summary,
+	});
 
 	if (!project) {
 		return <Navigate to="/projects" replace />;
@@ -94,11 +102,7 @@ export default function ProjectDetail() {
 
 					<Reveal delay={0.12} className="mt-10">
 						<div className="overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl shadow-black/30">
-							<img
-								src={`/images/projects/${project.image}.png`}
-								alt={`${project.name} interface preview`}
-								className="w-full"
-							/>
+							<ProjectImage project={project} className="w-full" />
 						</div>
 					</Reveal>
 				</div>
@@ -124,6 +128,17 @@ export default function ProjectDetail() {
 								))}
 							</div>
 						</Reveal>
+
+						{project.note && (
+							<Reveal>
+								<div className="flex items-start gap-3 rounded-xl border border-[var(--warm)]/40 bg-[var(--surface)] p-5">
+									<Info className="mt-0.5 h-4 w-4 shrink-0 text-[var(--warm)]" />
+									<p className="text-sm leading-relaxed text-[var(--text-muted)]">
+										{project.note}
+									</p>
+								</div>
+							</Reveal>
+						)}
 
 						{/* Key features */}
 						<Reveal>

@@ -127,7 +127,10 @@ export default function Hero() {
 								aria-hidden="true"
 							/>
 							<img
-								src="/images/pp.png"
+								src="/images/pp.jpg"
+								width="1000"
+								height="1221"
+								fetchpriority="high"
 								alt="Portrait of Md. Habibur Rahman"
 								className="relative aspect-square w-full rounded-[1.75rem] border border-[var(--border)] object-cover shadow-2xl shadow-black/30"
 							/>

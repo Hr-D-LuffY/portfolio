@@ -4,6 +4,8 @@ const TONE = {
   online: { dot: "bg-[var(--accent)]", text: "text-[var(--accent)]" },
   deployed: { dot: "bg-[var(--accent)]", text: "text-[var(--text-muted)]" },
   "in progress": { dot: "bg-[var(--warm)]", text: "text-[var(--text-muted)]" },
+  completed: { dot: "bg-[var(--accent)]", text: "text-[var(--text-muted)]" },
+  "not deployed": { dot: "bg-[var(--text-dim)]", text: "text-[var(--text-muted)]" },
   neutral: { dot: "bg-[var(--text-dim)]", text: "text-[var(--text-muted)]" },
 };
 

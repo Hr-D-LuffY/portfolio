@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://md-habibur-rahman-17.vercel.app/sitemap.xml

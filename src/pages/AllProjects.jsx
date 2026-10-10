@@ -4,9 +4,16 @@ import GridBackdrop from "../components/ui/GridBackdrop";
 import Reveal from "../components/ui/Reveal";
 import ProjectCard from "../components/ProjectCard";
 import { getAllProjects } from "../data/projects";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 export default function AllProjects() {
 	const all = getAllProjects();
+
+	usePageMeta({
+		title: "All Projects",
+		description:
+			"Full-stack projects by Md. Habibur Rahman: CareNest, FixItNow, Disaster Relief Platform, and more — with case studies and source links.",
+	});
 
 	return (
 		<div className="relative">

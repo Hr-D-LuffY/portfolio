@@ -20,8 +20,26 @@ import {
   SiGit,
   SiGithub,
   SiPostman,
+  SiTailwindcss,
+  SiZod,
+  SiRedis,
+  SiGoogle,
+  SiStripe,
+  SiVercel,
+  SiRender,
 } from "react-icons/si";
-import { ShieldCheck, Network, Code2 } from "lucide-react";
+import {
+  ShieldCheck,
+  Network,
+  Code2,
+  Wallet,
+  Cookie,
+  MessagesSquare,
+  Users,
+  Puzzle,
+  RefreshCw,
+  Zap,
+} from "lucide-react";
 
 // One flat, ordered list — grouped by `group` for rendering, but adding a
 // skill later is just one more object, no restructuring required.
@@ -44,6 +62,8 @@ export const skillGroups = [
       { name: "Next.js", Icon: SiNextdotjs },
       { name: "Django", Icon: SiDjango },
       { name: "Node.js", Icon: SiNodedotjs },
+      { name: "Tailwind CSS", Icon: SiTailwindcss },
+      { name: "Zod", Icon: SiZod },
     ],
   },
   {
@@ -52,14 +72,18 @@ export const skillGroups = [
       { name: "PostgreSQL", Icon: SiPostgresql },
       { name: "MySQL", Icon: SiMysql },
       { name: "MongoDB", Icon: SiMongodb },
+      { name: "Redis", Icon: SiRedis },
       { name: "Prisma", Icon: SiPrisma },
     ],
   },
   {
-    group: "Auth & Security",
+    group: "Auth, Security & Payments",
     items: [
       { name: "JWT", Icon: SiJsonwebtokens },
+      { name: "Google OAuth", Icon: SiGoogle },
       { name: "RBAC", Icon: ShieldCheck },
+      { name: "Stripe", Icon: SiStripe },
+      { name: "bKash", Icon: Wallet },
     ],
   },
   {
@@ -69,21 +93,34 @@ export const skillGroups = [
       { name: "JSON", Icon: SiJson },
       { name: "HTML", Icon: SiHtml5 },
       { name: "CSS", Icon: SiCss },
+      { name: "Cookies", Icon: Cookie },
     ],
   },
   {
-    group: "Tools",
+    group: "Tools & Platforms",
     items: [
       { name: "Git", Icon: SiGit },
       { name: "GitHub", Icon: SiGithub },
       { name: "Postman", Icon: SiPostman },
       { name: "VS Code", Icon: Code2 },
+      { name: "Vercel", Icon: SiVercel },
+      { name: "Render", Icon: SiRender },
+    ],
+  },
+  {
+    group: "Soft Skills",
+    items: [
+      { name: "Problem Solving", Icon: Puzzle },
+      { name: "Communication", Icon: MessagesSquare },
+      { name: "Teamwork", Icon: Users },
+      { name: "Adaptability", Icon: RefreshCw },
+      { name: "Quick Learner", Icon: Zap },
     ],
   },
 ];
 
 export const statRow = [
-  { label: "Shipped projects", value: "3" },
-  { label: "User roles modeled", value: "9" },
-  { label: "Core stack", value: "MERN" },
+  { label: "Projects built", value: "6" },
+  { label: "Payment gateways", value: "2" },
+  { label: "Core stack", value: "Next.js" },
 ];

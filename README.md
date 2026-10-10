@@ -21,7 +21,7 @@ Personal portfolio site for **Md. Habibur Rahman**, a Full Stack Developer. Buil
 | ------------ | --------------------------------------------------------------------------------------------- |
 | **Hero**     | Terminal-style intro with animated name typing and a portrait                                 |
 | **About**    | Background, current focus (Junior Full Stack Developer roles), and education/thesis highlight |
-| **Projects** | Featured work, including FixItNow and Disaster Relief                                         |
+| **Projects** | Featured work — CareNest, FixItNow, and Disaster Relief — each with a full case-study page                                         |
 | **Contact**  | Contact form + direct links (email, phone, location, GitHub, LinkedIn)                        |
 
 ## 🎓 Education
@@ -31,7 +31,7 @@ Thesis: _"A Security Evaluation Framework for Distributed Retrieval-Augmented Ge
 
 ## 📬 Contact
 
-- **Email:** hrhabib1711@email.com
+- **Email:** hrhabib1711@gmail.com
 - **Phone:** +880 1533-961467
 - **Location:** Mirpur, Dhaka, Bangladesh
 - **GitHub:** [@Hr-D-LuffY](https://github.com/Hr-D-LuffY)

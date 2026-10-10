@@ -31,7 +31,7 @@ export default function Footer() {
             <FaLinkedin className="h-4 w-4" />
           </a>
           <a
-            href="mailto:hrhabib1711@email.com"
+            href="mailto:hrhabib1711@gmail.com"
             aria-label="Email"
             className="text-[var(--text-muted)] transition-colors hover:text-[var(--accent)]"
           >

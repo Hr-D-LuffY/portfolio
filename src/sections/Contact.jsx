@@ -12,8 +12,8 @@ const FORMSPREE_ENDPOINT = `https://formspree.io/f/${FORMSPREE_FORM_ID}`;
 const CONTACT_LINKS = [
 	{
 		label: "Email",
-		value: "hrhabib1711@email.com",
-		href: "mailto:hrhabib1711@email.com",
+		value: "hrhabib1711@gmail.com",
+		href: "mailto:hrhabib1711@gmail.com",
 		Icon: Mail,
 	},
 	{
@@ -169,8 +169,8 @@ export default function Contact() {
 							{status === "error" && (
 								<p className="mt-4 font-mono text-xs text-[var(--warm)]">
 									✗ something went wrong — email me directly at{" "}
-									<a href="mailto:hrhabib1711@email.com" className="underline">
-										hrhabib1711@email.com
+									<a href="mailto:hrhabib1711@gmail.com" className="underline">
+										hrhabib1711@gmail.com
 									</a>
 									.
 								</p>
